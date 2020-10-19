@@ -1,6 +1,7 @@
 #ifndef COMPUTADORA_H
 #define COMPUTADORA_H
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 class Computadora
@@ -23,6 +24,36 @@ public:
     string getSisop();
     float getPeso();
     int getRam();
+
+
+    friend ostream& operator<<(ostream &out, const Computadora &c)
+    {
+        out << left;
+        out << setw(10) << c.marca;
+        out << setw(12) << c.sisop;
+        out << setw(8) << c.peso;
+        out << setw(8) << c.ram;
+        out << endl;
+
+        return out;
+    }
+
+    friend istream& operator>>(istream &in, Computadora &c)
+    {
+        cout << "Marca: ";
+        getline(cin, c.marca);
+
+        cout << "Sistema operativo: ";
+        getline(cin, c.sisop);
+
+        cout << "Peso: ";
+        cin >> c.peso;
+
+        cout << "Ram: ";
+        cin >> c.ram;
+
+        return in;
+    }
 
 };
 

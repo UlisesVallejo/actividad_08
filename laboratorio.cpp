@@ -20,13 +20,21 @@ void Laboratorio::agregarFinal(const Computadora &c)
 
 void Laboratorio::mostrar()
 {
+    cout << left;
+    cout << setw(10) << "Marca";
+    cout << setw(12) << "Sistema O.";
+    cout << setw(8) << "Peso";
+    cout << setw(8) << "Ram";
+    cout << endl;
+
     for(size_t i = 0; i < cont; i++)
     {
         Computadora &c = arreglo[i];
-        cout<<"Marca: "<<c.getMarca()<<endl;
+        cout << c;
+        /*cout<<"Marca: "<<c.getMarca()<<endl;
         cout<<"Sistema operativo: "<<c.getSisop()<<endl;
         cout<<"Peso: "<<c.getPeso()<<endl;
         cout<<"Ram: "<<c.getRam()<<endl;
-        cout<<endl;
+        cout<<endl;*/
     }
 }
