@@ -18,12 +18,15 @@ int main(){
     lab << c1 << c2;
     
 
-    //cout << c1;
+    
     Computadora c3;
     cin >> c3;
     lab << c3;
 
     lab.mostrar();
+    //cout << c1;
+
+    lab.respaldar();
     
 
     return 0;
